@@ -1,0 +1,320 @@
+OOP and Data Structures
+	What is the difference between a class and an object?
+	What is the difference between overloading and overriding a method?
+	What is the difference between composition and aggregation?
+	Can you override a static method?
+	Can you access an instance variable from a static method?
+	What is polymorphism in OOP?
+	What is the difference between procedural and OOP programming?
+	What is an abstract class and when would you use one?
+	What is an interface and when would you use one?
+	How do you implement a Stack?
+	How do you implement a Linked List?
+	What is the difference between a List and an Array?
+	What is the difference between a Trait and a Mixin?
+	How do you implement a Map?
+	Describe the pros and cons of Array List and Linked List?
+	What is a binary search tree?
+	What is a graph?
+	How do you implement a graph?
+	What is the difference between static and dynamic typing?
+	What is the difference between strong and weak typing?
+	Describe covariance and contravariance in OOP.
+
+Design Patterns and Principles
+	Describe Singleton pattern and provide an implementation.
+	Describe your favorite design pattern and provide an usage example.
+	Describe SOLID design principles.
+	Describe your favorite design principle and provide an usage example.
+	Describe design pattern classification and provide an example for each category.
+	Describe CAP theorem for distributed systems.
+	Describe Principe of Least Knowledge for OOP systems.
+	Describe the Diamond problem in the context of inheritance.
+
+Microservice
+	Cons of micro service?
+	How to reduce or control throughput of micro service? What to keep in mind?
+	How to transfer a monolithic application to micro service?
+	What is bonded context?
+	Suppose you are moving a monolithic application to micro service in 1-year time frame. 
+	Now you have developed 2 modules in 3 months and let’s assume 8 other modules is pending. In this scenario how will you maintain the application. (various practical examples)"
+	Orchestration vs Choreography?
+	What are the rest principals you are following in your project?
+	Suppose you have developed a micro service api which has hit count 2000/s and every time this api use a third party api for data retrieval. Now your license for the third party api permits hits 1000/s.
+	How will you handle this scenario in terms of latency?"
+
+GIT
+	What is a branch?
+	How can you create a branch?
+	What is the difference between git pull and git fetch?
+	How can current branch be changed?
+	How can content in a namespace/folder start being versioned using git?
+	Given your new project is git versioned, how do you get project code to your station?
+	How can you list latest commits on current branch?
+	How do you revert a commit that has already been pushed to remote repository?
+	How do you squash last N commits into a single commit?
+	Is git a centralized or distributed VCS? What does that mean?
+	What is reflog, why and how would you use it?
+	What does stash as a command do? When do you use it?
+	What are tags, when do you use them, and how do you publish them?
+	How do you push a branch a second time, after performing a rebase? Is it possible to not be able?
+	Explain the branching flow that you use in a complex project with many team members?
+	How can the revert on a merge commit be made?
+	What does git bisect do?
+	How can you check what parents a merge commit has?
+	What are git hooks, how can they be used, and for what?
+
+Node JS
+	What is typically the first argument passed to a Node.js callback handler?
+	What is REPL? What purpose it is used for?
+	What tools can be used to assure consistent style?
+	What are the key features of Node.js?
+	What is NPM in Node.js?
+	What is a module?
+	What is the difference between blocking and non-blocking tasks?
+	Mention a few core modules that can cause blocking event loop.
+	Is Node JS is single or multi threaded?
+	How to define global variables in Node.js?
+	What node features can you take advantage of to improve the performance of your code for blocking tasks?
+	How can you run OS specific commands in node?
+	How does Node.js handle child threads?
+	What is “callback hell” and how can it be avoided?
+	What is EventEmitter in Node.js?
+	How to share a variable bewteen Node.js modules?
+	What is the difference between Operational errors and Developer errors?
+	What is the use of method – “spawn()”?
+	How can you check if a module was loaded or not?
+	What frameworks have you worked with? Explain how middleware works in the Express framework.
+	What's a stub? Name a use case.
+	How many types of streams are present in Node.js?
+	Does Node.js support multi-core platforms? And is it capable of utilizing all the Cores?
+	Explain Piping Stream?
+	What are the different types of Streams?
+	What are buffers?
+	Name a few events of the Readable or Writable streams.
+	Explain the Event Loop in Node.js.
+	How does 'require' work behind the scenes?
+	Difference between setImmediate() and process.nextTick()
+	How does clustering and interprocess communication work?
+	
+Databases	
+	What is a primary key
+	What is the difference between primary key and a Index
+	Can a primary key contain more than one column?
+	How do you make a simple select on all columns of a table?
+	You have 2 tables that are connected by a unique ID. How do you write a query to take all information on both tables based on a given ID
+	What UNIQUE is used for?
+	Why you will use indexes?
+	What is the difference between MyIsam and InnoDb
+	If you have a select with 2 columns in where let say id and parent_id, what index should we put to optimize the query 
+	What is Inner Join, Left Join, Right Join? How are they different?
+	What is the difference between GROUP BY and ORDER BY?
+	You have a table with a number of rows, and you want to delete half of them, you don't care witch are deleted how can you do that?
+	What is a temporary Table?
+	How do you create a procedure?
+	What are the disadvantages of the Indexes?
+	Did you use transactions? how do you use them?
+	What Statements That Cannot Be Rolled Back, do you know?
+	What do you mean by NoSQL databases? 
+	What is the difference between NoSQL and RDBMS? 
+	Do you know what is the key difference between Replication and Sharding?
+	How can you see what index is used in a Query
+
+JAVA
+	Describe Java access modifiers.
+	What is the difference between package private and protected scope?
+	How do you prevent a class from being extended?
+	What is the difference between an abstract class and an interface?
+	When would you use an abstract class instead of an interface?
+	What is the difference between a checked and unchecked exceptions?
+	When would use an unchecked exception?
+	Describe Object's hashCode and equals contract.
+	Describe Java Collections hierarchy.
+	What is the difference between a Set and a List?
+	What is the difference between a Set and a Map?
+	How do you sort an array?
+	How do you sort a List?
+	What is a Comparator?
+	When would you use a Comparator instead of implementing Comparable? (to sort a Collection or an Array).
+	What is the difference between Vector and ArrayList?
+	What is the difference between Hashtable and HashMap?
+	Describe how ClassLoader works.
+	What are the most important new APIs introduced by Java 8?
+	What is a Stream?
+	What is a Lambda expression?
+	What is a MethodHandle?
+	When would you use Optional? Provide an example.
+	How do you reference a constructor using a MethodHandle?
+	How does Java implements Generics? Why?
+	Did you use Reflection API? Provide an example.
+	Can you describe Producer Extends Consumer Super principle when designing an API involving generics?
+	How is HashMap implemented internally? How does it behave?
+	How is ConcurrentHashMap implemented internally? How does it behave?
+	What is ArrayList backed by?
+	How do ArrayList and LinkedList behave when adding an element in the midle of them?
+	
+Java Concurrency
+	Describe synchronize keyword. Provide an example.
+	Describe volatile keyword. Provide an example.
+	What is an object monitor?
+	What is a thread?
+	How do you create a thread in Java?
+	What is a ThreadPool?
+	What is a ThreadFactory and when would you use it?
+	Did you use java.util.concurrent package directly? Provide an example.
+	What is an Executor?
+	How do you stop a thread?
+	What is a daemon thread?
+	Describe a deadlock situation.
+	Describe a livelock situation.
+	What is a Future?
+	What is CompletableStage?
+	What is a CompletableFuture?
+	How do you schedule a task to execute every 5 minutes using only standard Java APIs?
+	What is a CyclicBarrier and when would you use it? Provide an example.
+	What is a CountDownLatch and when would you use it? Provide an example.
+	What is a ReentrantLock?
+	What are the advantages of using a Lock instead of synchronization?
+	Describe the Actor concurrency model.
+	Where can you use syncronized? What does the syncronize lock in each case?
+	
+Java Tools and Frameworks
+	What is your favorite Java framework?
+	Describe the pros and cons of your favority Java framework.
+	What is ORM?
+	What ORM implementations did you use?
+	What JEE APIs did you use? Provide examples for each used.
+	What build tools did you use? Which one is your favorite and why?
+	What other JVM languages other than Java did you use?
+	What is DI and why it is useful?
+	What is AOP?
+	Spring specific questions.
+	JDBC, JPA, JTA, Servlets, JSP specific questions.
+	How would you build a microservice?
+	
+JVM
+	Describe how the garbage collector works.
+	Describe JVM heap structure.
+	What garbage collector  implementations are provided by JVM?
+	How can you increase JVM's heap size?
+	How can you create a memory leak in Java?
+	Describe Java Memory Model.
+	What is JIT?
+	Did you ever had to fine tune the JVM for optimal performance? Provide an example.
+	Describe how tiered compilation works in JVM.
+	What is the difference between '-client' and '-server' JVM parameters?
+
+Unit Testing
+	What unit testing frameworks did you use?
+	Which unit testing framework is your favorite and why?
+	What is a unit test?
+	What is the difference between a unit test and an integration test?
+	What is TDD? Did you use it?
+	What is BDD? Did you use it?
+	What is the purpose of JUnit @Before and @After annotations?
+	What do you consider as hard-to-test-code? Provide an example.
+	What is mocking? What mocking libraries did you use?
+	What is the difference between mocks and stubs?
+	Difference between integration testing and unit testing? How would you implement each
+	
+HTTP
+	What is HTTP?
+	Describe the HTTP request flow.
+	What are the components of an HTTP request/response?
+	What header fields do you know of?
+	What are the request methods of HTTP? How and when would you use them?
+	What is Status codes?
+	What is HTTPS?
+	Why and when would you use HTTPS?
+	What are the drawbacks of HTTPS?
+	What are cookies?
+	If the server returns a 4XX error code, where is the problem?
+	If the server returns a 5XX error code, where is the problem?
+	What web server do you know / have you used?
+	Explain Safe methods
+	What is cURL in HTTP?
+	What is the meaning of PUT method?
+	What is HTTP session state?
+	Explain Request message in HTTP
+
+HTML
+	What does DOCTYPE do?
+	Name at least 2 differences between HTML & XHTML
+	How many list types exist and what are they?
+	What is an <ul> tag?
+	How do you create bold text in HTML using a tag?
+	How do you create a link in HTML?
+	Name HTML tags used for tables that are specific
+	What is the difference in display between <div> and <span> elements?
+	If you don't specify the width of a <div> element in HTML what will the default width be?
+	What is the DOCTYPE for HTML5?
+	Name some HTML5 tags
+	To include an external CSS file, what tag would you use?
+	Using HTML5, what tag should be used for menu?
+	Name at least 2 tags that are not supported any more with HTML5
+	What attribute would you use to make input field not editable?
+	How do you tell a form in HTML what HTTP method it should use?
+	If you want to upload a file what attribute do you need to set?
+	Name possible type values that can be set to input element
+	If you want a script to be in head tag and should not block render, what attributes should you set?
+	What attribute should you use in HTML to attach a click event to an element?
+	What attribute can be set on a form element to call some JavaScript for form validation?
+	How many H1 tags should be on a page?
+	What attribute should be used for <img> that will help SEO?
+	
+CSS
+	What are the options for applying CSS to an HTML document?
+	How can you override an inline style?
+	What is the result of two separate external stylesheets defining conflicting rules (or the same stylesheet defining multiple conflicting rules) for the same element(s)?
+	Is it possible to include an external stylesheet in another stylesheet?
+	What (types of) selectors does CSS provide?
+	Is it possible to target an element based on its relationship to another element (e.g., B is a descendant of A, or B immediately follows A)?
+	"How can you style a certain element based on user interaction (e.g., on mouse over or when an input is selected)?
+	How would you target all inputs of type "number" for styling?
+	What CSS properties affect an element's box model?
+	How can you specify the border / padding / margin of an element?
+	What values does the display property accept?
+	What does the float property do? What about clear?
+	How does the browser calculate the priority of a certain rule?
+	How can you control the way the browser calculates the dimensions of an element relative to its box model?
+	How can you control the position of an element? What are the differences between each type of positioning?
+	How can you modify an element to display its text as lowercase / uppercase through CSS?
+	What does the text-overflow property do?
+	"How can you force a piece of text to be displayed on a single line, regardless of its length?"
+	How can you add a strikethrough effect for a piece of text?
+	Other medium questions asked by the interviewer
+	What are media queries useful for? How can you define a media query?
+	Is it possible to use a custom font that is not web-safe?
+	What are CSS transitions useful for?
+	"What types of transforms can an element support?"
+	Is it possible to animate an element using CSS?
+	What are some of the common benefits that a CSS preprocessor offers?
+	What are LESS / SASS variables? How can you use them?
+	How would you rewrite a larger piece of commonly used CSS code with a preprocessor?
+	How would you rewrite a definition to inherit rules from other definitions using a preprocessor?
+	Other difficult questions asked by the interviewer
+
+JavaScript
+	What are the basic types in JS?
+	Compare '===' vs '=='. What is your choice and why?
+	What is event delegation?
+	What is event bubbling?
+	Explain the differences between null, undefined and undeclared
+	Explain DOM manipulation. Access elements, operations.
+	What is the return type of logical operators (||, &&)?
+	Describe the difference between the various types of variable scope.
+	What is the difference between Function Declarations and Function Expressions? What does IIFE mean?
+	What is the purpose of 'use strict' and how to use it?
+	What is the difference between using call() and apply() to invoke a function with multiple arguments? Is it possible to use bind() to achieve a similar result?
+	Explain function closure
+	What is a promise?
+	What is AJAX / XHR? How does it work?
+	What is the difference between Array.prototype.map(), Array.prototype.reduce() and Array.prototype.forEach()? How are they different from standard looping constructs?
+	What is block scope? How can it be achieved? Are there any known limitations?
+	Explain Critical Rendering Path
+	Explain "hoisting"
+	Describe web workers
+	What is the event loop?
+	What are repaint & reflow? When do they occur?
+	What JS transpilers / bundling systems are you familiar with? Can you explain how they work?
+

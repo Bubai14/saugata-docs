@@ -1,0 +1,1368 @@
+CUSTOM ANNOTATIONS
+	RetentionPolicy.SOURCE -->	refers to the source code, discarded during compilation. It will not be available in the compiled class.
+	RetentionPolicy.CLASS -->	refers to the .class file, available to java compiler but not to JVM . It is included in the class file.
+	RetentionPolicy.RUNTIME	--> refers to the runtime, available to java compiler and JVM.
+
+performance analysis of application, any tool used for that
+hibernate performance analysis
+
+how many ways you can create Object of a class? 
+
+ObjectInputStream in = new ObjectInputStream(new FileInputStream("data.obj"));
+Employee emp5 = (Employee) in.readObject();
+
+Employee emp4 = (Employee) emp3.clone();
+
+Employee emp2 = (Employee) Class.forName("org.programming.mitra.exercises.Employee").newInstance();
+
+Constructor<Employee> constructor = Employee.class.getConstructor();
+Employee emp3 = constructor.newInstance();
+
+
+annotations used in the Spring.
+How do you configure in Spring?
+Is "id" mandatory while defining bean?
+Spring scopes - default (difference between Singleton and Prototype)
+How do you make sure the properties of an object are in consistent state if you have multiple instances across two applications (clustered environment)
+How do you match the state of an object in one instance of application with another?(Like through DB or through JMS)
+How do you you throw or catch an exception if something goes wrong in run() method of thread?
+jdbcTemplate what is blob ?
+Agile Functionality - How do you track work and how do you mark it is completed or not?
+What is the difference between TRUNCATE and DELETE in Oracle DB?
+How do you resolve dependency conflicts in Maven? Suppose you don't want one particular version of jar as it gives conflict.
+System.runFinalization();
+	I assume that System.gc() needs to be called before System.runFinalization(), because it essentially "marks" the object as "to-finalize", 
+	so that when I run System.runFinalization(), it has an object to actually run.
+
+CopyOnArrayList() vs ArrayList
+
+Synchronized	ArrayList is not synchronized.	
+				CopyOnWriteArrayList is synchronized.
+				
+Thread Safe		ArrayList is not thread safe.	
+				CopyOnWriteArrayList is thread safe.
+				
+Iterator type	ArrayList iterator is fail-fast and ArrayList throws ConcurrentModificationException if concurrent modification happens during iteration.	
+				CopyOnWriteArrayList is fail-safe and it will never throw ConcurrentModificationException during iteration. 
+				The reason behind that CopyOnWriteArrayList creates a new arraylist every time it is modified.
+
+Remove 
+Opearation	ArrayList iterator supports removal of element during iteration.	
+			CopyOnWriteArrayList.remove() method throws exception if elements are tried to be removed during iteration.
+			
+Performance	ArrayList is faster.	
+			CopyOnWriteArrayList is slower than ArrayList.
+			
+Since Java 
+Version				1.2	
+					1.5
+
+
+JPMC Questions:
+What is the difference between Singleton in jdk 1.5 & jdk 1.7
+
+What is new in Collections in jdk8? 
+Sorting Map directly
+List<Map.Entry<String, String>> sortedByKey = map.entrySet().stream().sorted(Map.Entry.comparingByKey()).collect(Collectors.toList());
+    sortedByKey.forEach(System.out::println);
+
+
+Iterate over map easily 
+map.forEach((k, v) -> System.out.println("Key : " + k + " Value : " + v));
+
+String val = map.getOrDefault("B", "Nah!");
+ 
+map.replaceAll((k, v) -> "x"); // values is "x" for all keys.  
+
+map.putIfAbsent("B", "x");
+ 
+map.compute("B", (k, v) -> v.concat(" - new "));
+
+persons.forEach(p -> p.setLastName("Doe"))
+
+Stream<Person> personsOver18 = persons.stream().filter(p -> p.getAge() > 18);
+
+Parallel and Sequential Streams
+
+What if there is a Hash- Collision? A new value being added, to an already existing key.
+
+What is OptionalInt
+  
+	
+File Handling: How you will read a very big file and store it in windows.
+Scanner
+Streaming with Apache Commons IO
+
+What is the most efficient way of saving employees into a Database in a sorted order? Insertion Sort
+What all parameters you will take care of, while designing RESTful services so that these have good performance?
+Suppose there are 1000 of requests to a server, how do you handle them to make sure these do not clash and provide optimum performance as well.
+How do you take care of SLA for a request to your service like response within 200 ms or 600 ms
+In Factory pattern how do you instantiate Bean? As there are no Constructors
+What is Document DB in NoSQL?
+How do you handle Transaction in Spring? Transactional (Role = )
+What is the difference between Roles as Support_New and New?
+What is @Qualifier in Spring?
+What do you understand from Aspects? What is Join Point and Point Cut?
+Collection - hashcode and equals implementation? Using Comparator
+How you will make sure that your keys in your Hashmap do not get changed?
+Print 1-10 without using loop
+Why Char[] are preferred over String while storing password.
+
+
+Difference between a synchronizedHashMap and HashTable?
+	
+	Hashtable doesn’t allow even a single null key and null values.
+	Synchronized HashMap allows one null key and any number of null values.
+	
+	Iterators returned by Hashtable are fail-safe in nature. i.e they don’t throw ConcurrentModificationException 
+	if the map is modified after the creation of the iterator.
+	Iterators returned by synchronized HashMap are fail-fast in nature. i.e they throw ConcurrentModificationException 
+	if the map is modified after the creation of iterator.
+	
+	HashTable was there since JDK 1.1. From JDK 1.2, it has been made a part of Java Collection Framework.
+	HashMap is introduced in JDK 1.2.
+	
+	HashTable is the legacy class. It is sometimes considered as due for deprecation. So, it is recommended that not to use HashTable in your applications.
+	If you want a high level of data consistency, then only consider using synchronized HashMap.
+
+	
+What is IdentityHashMap and WeakHashMap ?
+	final Map<String, String> identityMap =  new IdentityHashMap<>();
+	identityMap.put(new String("1"), "Value One");
+	identityMap.put(new String("1"), "Value Two");
+	
+	String keyW = new String("mapKey");
+	weakMap.put(keyW, new Employee("1", "Saugata", 30));
+	
+	keyW = null;
+	System.out.println("WeakMap.size() ::::: 0 ");
+
+What is flatMap?
+
+Java Memory Management:
+
+Garbage Collection
+What is Stop the World concept ?
+What are the types of Garbage Collection :
+	
+	
+
+Why String is immutable? Why subString ?
+In Jdk 8 we have method definition inside Interfaces; called Default Methods but how does it solve the diamond interface problem of Multiple Inheritance?
+Complete flow of OAuth 2 and open Id Connect in REST Security
+How do you configure Caching inside REST services?
+How do you configure datasource in application Server and how do you configure connection pool?
+What is Apache C3PO?
+How do you make sure that a queue message has not gone through in JMS?
+What are Microservices?
+How do you monitor performance in your project? what is that parameter you judge it with ?
+In SOAP based webservice, what information does WSDL contain?
+How do you change returntype from Employees to a list Employees?
+Method overloading possible in Inheritance?
+Benefit of functional programming
+	as a variable we can have the functions
+	reusuability
+	less number of code
+Examples of Functional Interface? Also Marker Interface?
+	Predicate --> boolean test(T t)
+	Consumer --> void accept(T t)
+	Supplier --> T get()
+	Function --> R apply(T t)
+	
+	BiPredicate --> boolean test(T t, U u)
+	BiConsumer --> void accept(T t, U u)
+	BiFunction --> R apply(T t, U u)
+	
+peek 
+Some of the other questions:
+
+
+Soap vs REST (Why REST? Is there no need of SOAP then?)
+REST how you implement. Explain the Design approach e.g. a Mailbox application
+Apache Camel OSGi container - How to do Hot Deployment?
+JMS Queue. How to browse and Query?
+How do you design your application? Key points to architect an application.
+Spring Scopes - Singleton, Prototype, Request, Session, Global - Differences
+Customized Cache. How to remove the least used item.
+Can we have Scope as Prototype and Class as Singleton. If yes what will be the scope?
+Factory pattern - how to create bean - as it doesn't have Constructor
+Observer Design Pattern - Factory Design Pattern - Front Controller Design Pattern
+Have you used Customized annotations?
+How do you tune Performance on DB side? And also Java side.
+Caching concepts - customized cache - how to remove least used item from cache
+Difference between TRUN and TRUNCATE and DELETE in DB?
+SQL - Write a query to find the second highest salary from an Employee table?
+Basic Unix commands like how to find a file (find command) and how to search a string(grep command)
+Collection Interface - Difference between HashMap(not synchronized) & HashTable(Synchronized -used earlier)
+An Employee object with EmpName, EmpId, Salary etc. How do you Sort it? (Provide implementation of Comparator's compare() method)
+Collections - equals() and hashcode() concept?
+What is Executor and ExecutorService in Thread ?
+What is Future in Thread? Also Future Task?
+How do you make your run() method to throw Exception? (Use call method of Callable interface) 
+How to use FutureTask with Executor ?
+What is Fork/Join framework? How to implement it?
+How to prevent deadlocks in Threads?
+Java 8 (like Lambda exp, Reference Methods, Default Interface with Methods) and java 7 specific features 
+(like Spring with switch statements, multiple Exceptions in a single catch, diamond operator in Generics, Fork/Join)
+What is the advantage of using Dockers/Containers ?
+
+
+
+Multi Threading:
+
+What is the difference between Process and Thread?
+Can we call run() method of a Thread class Vs Thread.start()?
+What is intertheread commucation and some common methods?
+What wait() a part of object class?
+Volatile keyword significance with practical example?
+How to create daemon thread in Java?
+What is ThreadLocal and when we use the same?
+What is Deadlock and how to know in production environment deadlock is happening or not? A- Using thread dump
+What is Thread Pool? How can we create Thread Pool in Java?
+What is Lock interface in Java Concurrency API? What are its benefits over synchronization?
+What is Callable and Future?
+What is Atomic Integer ? 
+
+Serilaization:
+​
+How to make a Java class Serializable
+why seriaization?
+What is serialVersionUID? What would happen if you don't define this?
+While serializing you want some of the members not to serialize? How do you achieve it?
+Are transient and static vaiables serialized?
+	Static variable won't even participate in Serialization. Static variable will be serialized if the value is initialized during declaration itself.
+	Because here transient modifier will be ignored and static modifier will take over the actions
+If a class is Serializable but its super class in not, what will be the state of the instance variables inherited from super class after deserialization ?
+	At the time of serialization, if any instance variable is inheriting from non-serializable superclass, 
+	then JVM ignores original value of that instance variable and save default value to the file.
+	
+	At the time of de-serialization, if any non-serializable superclass is present, then JVM will execute instance control flow in the superclass. 
+	To execute instance control flow in a class, JVM will always invoke default(no-arg) constructor of that class. 
+	So every non-serializable superclass must necessarily contain default constructor, otherwise we will get runtime-exception.
+What will happen if we make final instance variable as transient ?
+	transient and final : final variables are directly serialized by their values, so there is no use/impact of declaring final variable as transien
+
+
+SOAP how to convert XML to object?
+Set with a list of Emp (id, emp) how to convert to HashMap?
+Generics method signature with <T> if it takes some list of values e.g. Empl and returning only one element and you dont want to cast?
+OAuth security implementation in Muliple services environment? An Orchectration wrapper in front of services
+Connect multiple services with same Schema but differnt interfaces. Like Delta airlines and United Services? Part of response is different for both the services.
+What Design Pattern in previous case?
+How to read a file using Java8 - Stream?
+Faced any issue like service communication choked or memory issues?
+
+
+spring data
+spring data rest
+spring feign
+spring hystrix
+spring cloud config
+spring cloud stream
+spring web flow
+spring zuul
+eh cache
+
+transaction handling in microservices
+authentication and authorization in microservices
+session handling in microservices
+API gateway
+Service discovery
+request tracing in microservice - mapped diagonistic context
+scaling microservices
+Fault Tolerance in microservice
+
+microservices architecture
+12 factor app
+ekhon seta 15 factor hoyeche
+	https://12factor.net/
+ 
+NoSQL (MongoDB, HBase)
+Event driven microservices
+
+Domain Driven Design
+
+depends_on vs links
+Quorom Theory
+Gossip Protocol
+Replication Factor
+NoSQL 
+Wide Column DB
+
+Benefits of Angular
+What is 2 way binding
+What are directives in Angular?
+	Attribute Directives
+	Component Directives
+	Structural Directives
+Angular Material
+Observables(more than one event) differ from Promises
+
+
+List The Types Of Data Binding Supported By Angular 5?
+
+Angular 5 supports four types of Data Binding They are
+	String Interpolation
+	Property Binding
+	Event Binding
+	Two-way-binding
+
+routeprovider 
+
+Store Data in memory
+in clause more than 1000 datasource
+
+What is Java String Pool ?
+What is a classloader in Java?
+What is the difference between classpath and path.
+Difference between Countdown Latch and Cyclic Barrier
+What is Lock Interface and scenario to use over traditional Synchronization
+Race Condition vs Deadlock. How to take care of deadlock situation in code. 
+Why Java Strings are immutable in nature ?
+What is runtime polymorphism ?
+What is multiple inheritance? Is it supported by Java?
+Functional Interface ?
+
+== VS ===
+== converts the variable values to the same type before performing comparison. This is called type coercion.
+=== does not do any type conversion (coercion) and returns true only if both values and types are identical for the two variables being compared.
+
+Spring Boot:
+	
+Benefit of Spring Boot.
+	Create stand-alone Spring applications
+	Embed Tomcat, Jetty or Undertow directly (no need to deploy WAR files)
+	Provide opinionated 'starter' dependencies to simplify your build configuration
+	Automatically configure Spring and 3rd party libraries whenever possible
+	Provide production-ready features such as metrics, health checks, and externalized configuration
+	Absolutely no code generation and no requirement for XML configuration
+
+Ways of creating Spring Boot project
+What is Spring Boot Initilizer ?
+what is the purpose of application.prop or application.yml
+How can you override default properties in Spring boot ? like JAVA version
+How to use different jar version in Spring boot project instaed of the default one provided by Spring.
+Purpose of Spring Boot starter project.
+What is actuator in Spring Boot
+	management.endpoints.web.exposure.include=*
+	management.endpoint.health.show-details=always
+	management.health.dmpindicator.enabled=true
+	management.endpoints.web.base-path=/myhealth
+	
+	@Component("dmpindicator")
+	@ConditionalOnEnabledHealthIndicator("dmpindicator")
+	public class DMPHealthIndicator implements HealthIndicator {
+
+		@Override
+		public Health health() {
+			final double chance = ThreadLocalRandom.current().nextDouble();
+			Health.Builder status = Health.up();
+			if (chance > 0.9) {
+				status = Health.down();
+			}
+
+			return status
+			  .withDetail("chance", chance)
+			  .withDetail("strategy", "thread-local")
+			  .build();
+		}
+	}
+	
+Give some of the important Actuator URLs name
+	/beans returns all available beans in our BeanFactory. Unlike /auditevents, it doesn't support filtering.
+	/conditions, formerly known as /autoconfig, builds a report of conditions around autoconfiguration.
+	/configprops allows us to fetch all @ConfigurationProperties beans.
+	/env returns the current environment properties. Additionally, we can retrieve single properties.
+	/health summarizes the health status of our application.
+	/heapdump builds and returns a heap dump from the JVM used by our application.
+	/info returns general information. It might be custom data, build information or details about the latest commit.
+	/logfile returns ordinary application logs.
+	/loggers enables us to query and modify the logging level of our application.
+	/metrics details metrics of our application. This might include generic metrics as well as custom ones.
+	/sessions lists HTTP sessions given we are using Spring Session.
+	/shutdown performs a graceful shutdown of the application.
+	/threaddump 
+
+Main annotations use in SprintBoot main class.
+	@SpringBootApplication --> @Configuration @EnableAutoConfiguration @ComponentScan
+
+	@EnableAutoConfiguration -> Auto-configures the beans that are present in the classpath. 
+							 This simplifies the developers work by guessing the required beans from the classpath and configure it to run the application
+	@Configuration -> Indicates that the class has @Bean definition methods. So Spring container can process the class and generate Spring Beans to be used in the application
+	@ComponentScan -> The process of discovering Spring Components within classpath of the application is called Component Scanning in Spring. Later spring will use them to add in application context.
+					  The classes annotated with @Component, @Controller, @Service, @Repository, @Configuration, @RestController etc will be treated as Spring Components.
+	
+How to change log level and location of a Spring Boot application.
+logging.level.com.baeldung.testloglevel=DEBUG
+Similarly, we can change the logging level for all packages by setting the root log level:
+
+logging.level.root=INFO
+
+How to connect DB from Spring Boot application.
+spring.datasource.driverClassName = com.mysql.jdbc.Driver
+spring.datasource.url = jdbc:mysql://localhost:3306/PRODUCTSERVICE?autoreconnect = true
+spring.datasource.username = root
+spring.datasource.password = root
+
+Connect multiple DB from Spring Boot application
+How to deploy Spring Boot project in prod server.Run Spring boot application
+What are Profile in spring boot ?
+	@Profile("dev")
+	spring.profiles.active=dev
+How to do dynamic loading of prop file in Spring Boot
+2 autoware @Bean and @Autowire..As example RestTemplate one for lower env and one for Prod
+Explain Spring MVC flow in Spring Boot project
+
+How to do asynchronous way of calling Microservice (WebClient)
+spring-boot-starter-webflux
+WebClient webClient2 = WebClient.builder()
+        .baseUrl("http://localhost:3000")
+        .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+        .build();
+
+What is the purpose of having bodyToMono()
+When WebClient when RestTemplate ?
+	Under the hood, RestTemplate uses the Java Servlet API, which is based on the thread-per-request model.
+	Consequently, the application will create many threads, which will exhaust the thread pool or occupy all the available memory.
+	
+	WebClient uses an asynchronous, non-blocking solution provided by the Spring Reactive framework.
+	While RestTemplate uses the caller thread for each event (HTTP call), WebClient will create something like a “task” for each event. 
+	Behind the scenes, the Reactive framework will queue those “tasks” and execute them only when the appropriate response is available.
+	
+Do we need to make Rest API code threadsafe ? If yes then how ?
+How you can ensure security while communicating between Microservices
+Which type of discovery is being used in case of Spring Boot or Spring Cloud
+What is bulkHead pattern
+	devide allocated thread for multiple service, like compartment
+Difference between 200 & 204 (No-Content)
+
+JAVA Architect:
+
+1. Define SOLID principles with specific examples.
+	Single Responsibility :  class should only have one responsibility. Furthermore, it should only have one reason to change.
+		How does this principle help us to build better software? Let's see a few of its benefits:
+			Testing – A class with one responsibility will have far fewer test cases.
+			Lower coupling – Less functionality in a single class will have fewer dependencies.
+			Organization – Smaller, well-organized classes are easier to search than monolithic ones.
+	
+	Open/Closed : lasses should be open for extension but closed for modification. In doing so, 
+	we stop ourselves from modifying existing code and causing potential new bugs in an otherwise happy application.
+	Of course, the one exception to the rule is when fixing bugs in existing code.
+	So stick to the open-closed principle and simply extend our Guitar class:
+		
+	Liskov Substitution : if class A is a subtype of class B, we should be able to replace B with A without disrupting the behavior of our program.
+	
+	Interface Segregation : larger interfaces should be split into smaller ones. 
+	By doing so, we can ensure that implementing classes only need to be concerned about the methods that are of interest to them.
+	
+	Dependency Inversion : The principle of dependency inversion refers to the decoupling of software modules. 
+	This way, instead of high-level modules depending on low-level modules, both will depend on abstractions.
+	The principle states that we must use abstraction (abstract classes and interfaces) instead of concrete implementations. 
+	High-level modules should not depend on the low-level module but both should depend on the abstraction. 
+	Because the abstraction does not depend on detail but the detail depends on abstraction. It decouples the software.
+	
+2. What is CAP theorem and where is it applicable?
+3. What is the difference between REST and SOAP?
+4. When should we use SOAP over REST?
+5. Why is REST named so?
+6. Explain how would we convert an existing monolith application into Microservices without minimal impact in existing business?
+7. What is the difference between reverse proxy and forward proxy? Explain why should we use each of these proxies?
+8. Please explain how does a load balancer balances the load across different servers?
+9. What are the types of load balancers? Explain each of the types and when should we use these types?
+10. What is Domain Driven Design and its benefits and use cases?
+11. What is Test Driven Development and its benefits?
+12. What are the disadvantages of serverless architecture and when should we use it?
+13. What is micro front end architecture. 
+14. Please explain how would convert a monolith app into microfront end architecture?
+15. What is client side loadbalancing and server side load balancing? Give specific examples.
+16. What is event-driven architecture and its benefits?
+17. Please explain CQRS pattern?
+18. What are the different patterns to achieve database transaction in Microservices when the transaction state expands across multiple services?
+19. An enterprise customer has set of applications and its development teams which is lacking in modern technology standards and governance. What approach/ tools would you recommend to incorporate proper technology governance with latest tools and technologies?
+20. What is blue/green deployment strategy?
+21. How can we achieve blue/green deployment using Docker Swarm?
+22. Why is Docker named so?
+23. If an application is having performance issues in the Production? You as an architect what tools and approaches would you use to debug the issue.
+24. How should be maintain session state using containers? Please provide a low cost solution.
+25. When should we use low-code platforms?
+26. What is multi-tenant architecture?
+27. Please explain in detail how https works?
+28. How do we implement https communication between Zuul Proxy and Spring Microservices?
+29. How do we implement seamless request tracking in Microservice architecture?
+30. How do we implement externalising of config files ?
+	-Dspring.config.location = C:\application.properties
+31. What do you understand by a breaking change of a API?
+
+
+Spring Security
+	Authentication
+		Who you are
+	Authorization
+		What do you want
+	Principal
+		Currently Logged-In User. One user can have multiple IDs.
+	Granted Authority
+		Bunch of permission given to an User. List of Autherities.
+	Roles
+		Group of Authorities/Permissions.
+		
+Intermediate call session token or security
+Current API computable future
+Exception Handling
+Transaction Management inter microservice
+Circuit breaker
+Load balancing
+Exception Handling
+ResponseErrorHandler
+Interceptor based exception handling
+Instance of memory leak
+Connection open and new HashMap.Why I need to explicitly close connection not explicitly nullify map object
+Real-life examples of functional interface
+Optional class in details
+LocalDate object
+
+Azure
+Why to use function app instead of logic app
+Why to use event hub
+Which database you used and benefits of using
+Multiple microservice defined in different subnets, then how to communicate between each other
+What is method binding
+What is the purpose of using azure service bus
+What is Topic & Queue
+
+
+https://youtu.be/7e5R7FetJnc
+
+Controller advice
+	implements ResponseEntityExceptionHandler 
+
+Exception handling
+@profile
+Component vs service vs repository annotations
+	One advantage of using this annotation is that it has automatic persistence exception translation enabled. When using a persistence framework such as Hibernate, native 
+	exceptions thrown within classes annotated with @Repository will be automatically translated into subclasses of Spring's DataAccessExeption.
+	To enable exception translation, we need to declare our own PersistenceExceptionTranslationPostProcessor bean:
+
+	@Bean
+	public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
+		return new PersistenceExceptionTranslationPostProcessor();
+	}
+	
+Interceptor
+
+1. Maintaining Session / Session Management.
+2. Email Shoot & Database Check/logging.
+3. Authentication & Authorization Validations.
+4. Request Time Calculations. / Performance tunning. Etc.
+
+public interface HandlerInterceptor {
+  boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler);
+  void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView mav);
+  void afterCompletion(HttpServletRequest request, HttpServeletResponse response, Object handler, Exception ex);
+}
+
+@Component
+public class ProductServiceInterceptor implements HandlerInterceptor {
+   @Override
+   public boolean preHandle(
+      HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+      
+      return true;
+   }
+   @Override
+   public void postHandle(
+      HttpServletRequest request, HttpServletResponse response, Object handler, 
+      ModelAndView modelAndView) throws Exception {}
+   
+   @Override
+   public void afterCompletion(HttpServletRequest request, HttpServletResponse response, 
+      Object handler, Exception exception) throws Exception {}
+}
+
+@Component
+public class ProductServiceInterceptorAppConfig extends WebMvcConfigurerAdapter {
+   @Autowired
+   ProductServiceInterceptor productServiceInterceptor;
+
+   @Override
+   public void addInterceptors(InterceptorRegistry registry) {
+      registry.addInterceptor(productServiceInterceptor);
+   }
+}
+
+Optional usage
+Map reduce 
+Microservice communication
+
+@controller/@restcontroller 
+Spring 4.0 introduced the @RestController annotation in order to simplify the creation of RESTful web services. 
+It's a convenient annotation that combines @Controller and @ResponseBody, which eliminates the need to annotate every request handling 
+method of the controller class with the @ResponseBody annotation.
+
+Other spring boot annotations
+
+@Post/@GetMapping
+RequestMapping can be used at class level:
+This annotation can be used both at the class and at the method level. In most cases, at the method level applications will prefer to use one of the HTTP method specific variants @GetMapping, @PostMapping, @PutMapping, @DeleteMapping, or @PatchMapping.
+while GetMapping only applies to method:
+Annotation for mapping HTTP GET requests onto specific handler methods.
+
+JWT token
+Header RS256 Algorithm
+Payload
+Signature
+
+Session management in Microservice using JWT
+difference between hasRole() and hasAuthority()
+	hasAuthority('ROLE_ADMIN') is similar to hasRole('ADMIN')
+
+Changing monolithic to microservices
+
+Advantage of monolithic 
+Simple to develop.
+Simple to test. For example you can implement end-to-end testing by simply launching the application and testing the UI with Selenium.
+Simple to deploy. You just have to copy the packaged application to a server.
+Simple to scale horizontally by running multiple copies behind a load balancer.
+
+Beanfactory vs application context 
+The Spring Framework comes with two IOC containers – BeanFactory and ApplicationContext. The BeanFactory is the most basic version of IOC containers, and the ApplicationContext extends the features of BeanFactory.
+BeanFactory loads beans on-demand, while ApplicationContext loads all beans at startup. Thus, BeanFactory is lightweight as compared to ApplicationContext.
+Provides messaging (i18n or internationalization) functionality, event publication functionality, annotation-based dependency injection, and easy integration with Spring AOP features.
+
+Apart from this, the ApplicationContext supports almost all types of bean scopes, but the BeanFactory only supports two scopes — Singleton and Prototype. 
+Therefore, it's always preferable to use ApplicationContext when building complex enterprise applications.
+
+Functional interface
+Discovery Pattern 
+Fallback mechanism
+
+Types of autowiring in Spring
+Different types of Scope in Spring
+Difference between name and id autowiring
+What is Qualifier
+Microservice distributed transaction management
+
+immutability in JAVA, how you can make Object as immutable
+	Make your class final, so that no other classes can extend it.
+	Make all its fields final and private, so that they’re initialized only once inside the constructor and never modified afterward.
+	Don’t expose setter methods.
+	If the class holds a mutable object:
+		Inside the constructor, make sure to use a clone copy of the passed argument and never set your mutable field to the real instance passed through constructor, this is to prevent the clients who pass the object from modifying it afterwards.
+		Make sure to always return a clone copy of the field and never return the real object instance.
+		
+	public final class ImmutableClass {
+	
+		/**
+		 * Integer and String classes are immutable whereas Date class is mutable
+		 */
+		private final Integer immutableInteger;
+		private final String immutableString;
+		private final Date mutableDate;
+
+		public ImmutableClass(Integer i, String s, Date d) {
+			this.immutableInteger = i;
+			this.immutableString = s;
+			this.mutableDate = new Date(d.getTime());
+		}
+
+		public String getImmutableString() {
+			return immutableString;
+		}
+
+		public Integer getImmutableInteger() {
+			return immutableInteger;
+		}
+
+		public Date getMutableDate() {
+			return new Date(mutableDate.getTime());
+		}
+
+		@Override
+		public String toString() {
+			return immutableInteger + ", " + immutableString + ", " + mutableDate;
+		}
+	}
+
+What benefit you are getting by making a class as final
+Spring bean multiple creation
+What is functional interface.Can we have concrete method other than default and static inside functioanl interface
+pass a method as reference in functional programming
+CORS 
+CSRF
+XXRF
+Table with employee id, name, and manager id where manager is also an employee.Print employee name along with manager name
+JSF benefit over JSP
+different implicit objects in JSP
+servet is threadsafe or not
+web.xml purpose
+web application structure explain in details
+explain web.xml components, can a web application run without web.xml ?
+What is DOS attack, how to stop it.
+what are different types of selector in JQuery
+Need to store the data in collection where last used data will be removed (LRU Map)
+how to can monitor performance of a application
+what alogorithm you will follow to select connection pooling parameters (maxconnetcion, connection timeout etc.)
+different dependent war deploy as a single war (META ***)
+yaml advantage over properties
+difference between fully consistent and eventual consistent
+where does certificates gets installed in java
+when should we use nosql database
+OLTP and OLAP
+How to install certificates
+
+
+
+Spring VS Spring Boot
+Actuator in Spring Boot
+What is Thymeleaf
+What is rest Controller and RequestMapping ?
+Importance of RestController
+Can we have user defined annotation
+Type of Annotations
+Design Pattern types, what you have used so far in your project
+Singleton Design pattern and Factory Design Pattern
+How to break Singleton Design Pattern
+	By using reflection
+	By using Serialization
+	By using clone()
+How to implement thread safety in Spring
+J2EE architecture example
+How Model and View communicate to each other
+Responsibilities of the bean developers
+Angular
+Functionality of Hibernate
+What are the interface vital role in Hibernate (Session, Session Factory)
+What is thread safe ? Session or Session Factory
+load find delete 
+Microservice 
+CICD experience and explain how it works
+Angular vs React
+DML commands
+Any exposure on SOAP
+Tools you have used
+Functionality of JVM, where it resides
+Exception handling in JAVA
+How do you catch Exception
+When RunTime exception
+
+
+1: OOPS Concept
+2: JAVA Memory Management
+3: Volatile 
+4: immutable class
+5: internal working of hashmap.
+6: diff between hashmap and concurrent hashmap.
+7: what is thread and daemon thread.
+8: what is the role of daemon thread in JVM.
+9: diff between wait and sleep.
+10: what is deadlock 
+11: how thread intercommunication.
+12: why wait, notify and notify all method under object class.
+13: how many ways we can create object in java.
+14: interview also expecting some design pattern from you.
+15: difference between deep cloning and shallow cloning.
+	Default Copy of JAVA is Shallow copy
+	Shallow copy copies on the main object, inner object will refer to main object inner object.
+	But in case of Deep Copy it will copy the inner class objects as well. For that need to override clone() of inner objects as well.
+	If object doesn't have inner objects Shallow and Deep both will be same. 
+16: checked and unchecked exception with example.
+
+In spring boot:
+1: How do you handle exception in your application.
+2: What is purpose of AOP.
+3: What is actuator.
+4: What is IoC controller.
+5: What is type of scope in springboot?
+5: Most hot question is what is spring security and how do you implement spring security in your application.
+6: If 1000 request hit at a time then how will handle all this request.
+7: interviewer may ask to explain some annotation
+Also you mentioned hibernate then question will come on hibernate.
+How to connect multiple database from Spring Boot application
+	1. Create two set of datasource entries (URL, username, password, driver-class) in application.properties file.
+	2. Create @Configuration class and inside that created two Beans. firstDataSource() and secondDataSource().
+	3. Create another set of Beans to get jdbcTemplate. jdbcTemplateOne(@Qualifier("firstDataSource")) and jdbcTemplateTwo(@Qualifier("secondDataSource")).
+	4. Use @Autowired jdbcTemplateOne or jdbcTemplateTwo as per requirement. It will inject respective datasources via JDBC template.
+	
+Different types of scope in Spring
+What is the difference between prototype and request scope
+
+Design Pattern
+	1. Creational Design Pattern
+		Factory Pattern
+		Abstract Factory Pattern
+		Singleton Pattern
+		Prototype Pattern
+		Builder Pattern
+
+	2. Structural Design Pattern
+		Adapter Pattern
+		Bridge Pattern
+		Composite Pattern
+		Decorator Pattern
+		Facade Pattern
+		Flyweight Pattern
+		Proxy Pattern
+		
+	3. Behavioral Design Pattern
+		Chain Of Responsibility Pattern
+		Command Pattern
+		Interpreter Pattern
+		Iterator Pattern
+		Mediator Pattern
+		Memento Pattern
+		Observer Pattern
+		State Pattern
+		Strategy Pattern
+		Template Pattern
+		Visitor Pattern
+		
+		
+Can we overload main(), How to call overloaded main()
+	Yes, we can overload. It is a static method like original main(), it can be called from inside original main or outside using class.main().
+	You can call main() from main(), but it will throw stackoverflow error.
+
+Difference between get() anmd load()
+	It is used to fetch data from the database for the given identifier  
+	It is also used to fetch data from the database for the given identifier 
+
+	It object not found for the given identifier then it will return null object 
+	It will throw object not found exception 
+
+	It returns fully initialized object so this method eager load the object  
+	It always returns proxy object so this method is lazy load the object  
+
+	It is slower than load() because it return fully initialized object which impact the performance of the application 
+	It is slightly faster.
+	
+Why TreeMap no NULL will not be allowed
+	As keys are in sorted so NULL key will throw NPE, hence not allowed.
+
+StringBuilder vs StringBuffer
+	StringBuilder --> Not Threadsafe hence Faster
+
+Component vs Service
+	For example, DispatcherServlet will look for @RequestMapping on classes that are annotated using @Controller but not with @Component.
+	The same is true for @Service and @Repository annotation, they are a specialization of @Component in service and persistence layer. 
+	A Spring bean in the service layer should be annotated using @Service instead of @Component annotation and a spring bean in the persistence layer should be annotated with @Repository annotation.
+	By using a specialized annotation we hit two birds with one stone. First, they are treated as Spring bean, and second, you can put special behavior required by that layer.
+	For example, @Repository's not only helping in annotation based configure but also catch Platform-specific exceptions and re-throw them as one of Spring’s unified unchecked exception.
+
+Different Type of Error Codes :
+	200 - OK (The request was successfully completed)
+	201 - Created (A new resource was successfully created)
+	204 - OK ((No Content))
+	400 - Bad Request (The request was invalid)
+	401 - Unauthorized (The request did not include an authentication token or the authentication token was expired.)
+	403 - Forbidden (The client did not have permission to access the requested resource.)
+	404 - Not Found (The requested resource was not found.)
+	405 - Method Not Allowed (The HTTP method in the request was not supported by the resource.)
+	409 - Conflict (The request could not be completed due to a conflict. 
+					For example,  POST ContentStore Folder API cannot complete if the given file or folder name already exists in the parent location.
+	500 - Internal Server Error (The request was not completed due to an internal error on the server side.)
+	503 - Service Unavailable (The server was unavailable.)
+
+Drop vs Truncate vs Delete
+	DROP - DROP statement is a Data Definition Language(DDL) Command which is used to delete existing database objects. 
+		   It can be used to delete databases, tables, views, triggers, etc.
+
+	TRUNCATE - TRUNCATE Command is a Data Definition Language operation. 
+			   It is used to remove all the records from a table. It deletes all the records from an existing table but not the table itself. 
+			   The structure or schema of the table is preserved.
+
+	DELETE - The DELETE statement in SQL is a Data Manipulation Language(DML) Command. It is used to delete existing records from an existing table. 
+			 We can delete a single record or multiple records depending on the condition specified in the query.
+
+
+Select Max(Salary) as Salary from tbl_Employees where Salary < (select MAX(Salary) from tbl_Employees) 			 
+
+Explain different OOPS concepts
+	Encapsulation - 
+	Abstruction - 
+	Inheritance - 
+
+Composition and Agreegation
+
+Comparable and Comparator
+	1) Comparable provides a single sorting sequence. In other words, we can sort the collection on the basis of a single element such as id, name, and price.	
+		The Comparator provides multiple sorting sequences. In other words, we can sort the collection on the basis of multiple elements such as id, name, and price etc.
+	2) Comparable affects the original class, i.e., the actual class is modified.
+		Comparator doesn't affect the original class, i.e., the actual class is not modified.
+	3) Comparable provides compareTo() method to sort elements.	
+		Comparator provides compare() method to sort elements.
+	4) Comparable is present in java.lang package.	
+		A Comparator is present in the java.util package.
+	5) We can sort the list elements of Comparable type by Collections.sort(List) method.	
+		We can sort the list elements of Comparator type by Collections.sort(List, Comparator) method.
+
+What is executor service
+What is the advantage of Dockers Containers
+How you are testing your application
+Different ways of handling exception in Spring MVC
+Dependency Injection in details
+Benefits of Spring MVC over other MVC frameworks
+What is ViewResolver pattern and how it works
+What is Root Application context in terms of Spring MVC? How it is loaded
+Explain how an incoming request is mapped to a controller and method
+Difference between Hibernate and normal JDBC
+Explain Hibernate Architecture
+How to deal with Database deadlock situations
+What is database sharding ?
+What is the difference between HTTP and HTTPS ?
+	https://www.youtube.com/watch?v=N_pSMHkubbY
+	
+Things to consider before creaing a microservice ?
+Best way to communicate between two microservices ?
+Design a sample applciation like Amazon
+How to handle exception in Microservices
+
+
+PowerMock
+	PowerMockito is a PowerMock's extension API to support Mockito. It provides capabilities to work with the Java Reflection API in a simple way to 
+	overcome the problems of Mockito, such as the lack of ability to mock final, static or private methods
+	
+	Add @RunWith(PowerMockRunner.class)
+	@PrepareForTest(fullyQualifiedname = "package name")
+	
+	@InjectMocks
+	private OrderService service;
+	
+	@Before
+	public void init() {
+		MockitoAnnotations.initMocks(ABC.class);
+	}
+	
+	Static Method Mocking:
+		PowerMockito.mockStatic(ABC.class);
+		when(ABC.sayHello()).thenReturn("Success");
+		
+		final OrderResponse response = service.makeOrder(order);
+		assertEquals("Success", response.getMessage());
+		
+	Private Method Mocking:
+		final OrderService orderService = PowerMockito.spy(service);
+		doReturn(100).when(orderService, "addDiscount", ArgumentMatchers.any());
+		
+		final OrderResponse response = service.checkOutOrder(order);
+		assertEquals(1000, response.getOrder().getPrice());
+	
+Below two dependencies need to be added in POM	
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>2.0.0-beta.5</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito2</artifactId>
+			<version>2.0.0-beta.5</version>
+			<scope>test</scope>
+		</dependency>
+		
+
+To use Mockito Test class has to be annotaed with @RunWith(SpringRunner.class) and @SpringBootTest
+
+	@Autowired
+	private OrderService orderService 
+
+	@MockBean
+	private OrderRepository repository;
+	
+	when(repository.findAll()).thenReturn(Stream.of(populate colleciotn to return new ArrayList));
+	assertEquals(2, orderService.getAllUser().size());
+	
+
+2020.0.x aka Ilford		2.4.x, 2.5.x (Starting with 2020.0.3)
+Hoxton		2.2.x, 2.3.x (Starting with SR5)
+Greenwich	2.1.x
+Finchley	2.0.x
+Edgware		1.5.x
+Dalston		1.5.x
+
+
+Hystrix:
+
+
+Hystrix configuration is done in four major steps.
+
+1. Add Hystrix starter and dashboard dependencies.
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-hystrix</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+</dependency>
+
+2. Add @EnableCircuitBreaker annotation
+3. Add @EnableHystrixDashboard annotation
+4. Add annotation @HystrixCommand(fallbackMethod = "myFallbackMethod")
+
+
+1. Invoke Student Service through spring framework provided RestTemplate
+2. Add Hystrix Command to enable fallback method – @HystrixCommand(fallbackMethod = "callStudentServiceAndGetData_Fallback") 
+	– this means that we will have to add another method callStudentServiceAndGetData_Fallback with same signature, which will be invoked when actual Student service will be down.
+3. Add fallback method – callStudentServiceAndGetData_Fallback which will simply return some default value.
+
+
+@Service
+public class StudentServiceDelegate {
+ 
+    @Autowired
+    RestTemplate restTemplate;
+     
+    @HystrixCommand(fallbackMethod = "callStudentServiceAndGetData_Fallback",
+					commandProperties = {
+						@HystrixProperty(name="timeOutInMillis", value="3000"),
+						@HystrixProperty(name="requestVolumeThresold", value="5"),
+						@HystrixProperty(name="errorThresoldPercenatge", value="50"),
+						@HystrixProperty(name="sleepWindowInMilliSeconds", value="10000"),
+					})
+    public String callStudentServiceAndGetData(String schoolname) {
+ 
+        System.out.println("Getting School details for " + schoolname);
+ 
+        String response = restTemplate
+                .exchange("http://localhost:8098/getStudentDetailsForSchool/{schoolname}"
+                , HttpMethod.GET
+                , null
+                , new ParameterizedTypeReference<String>() {
+            }, schoolname).getBody();
+ 
+        System.out.println("Response Received as " + response + " -  " + new Date());
+ 
+        return "NORMAL FLOW !!! - School Name -  " + schoolname + " :::  " +
+                    " Student Details " + response + " -  " + new Date();
+    }
+     
+    @SuppressWarnings("unused")
+    private String callStudentServiceAndGetData_Fallback(String schoolname) {
+ 
+        System.out.println("Student Service is down!!! fallback route enabled...");
+ 
+        return "CIRCUIT BREAKER ENABLED!!! No Response From Student Service at this moment. " +
+                    " Service will be back shortly - " + new Date();
+    }
+ 
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+}
+
+Eureka :
+
+<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-server -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+    <version>2.2.4.RELEASE</version>
+</dependency>
+
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+    <version>2.2.4.RELEASE</version>
+</dependency>
+
+<spring-cloud.version></spring-cloud.version>
+
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+
+spring.application.name=
+
+@Value(${api.key})
+
+@Bean
+@LoadBalanced
+public RestTemplate getRestTemplate() {
+    return new RestTemplate();
+}
+
+Cloud Config Server :
+
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-config-server</artifactId>
+	</dependency>
+
+	@SpringBootApplication
+	@EnableConfigServer
+	public class SpringBootConfigServerApplication {
+
+		public static void main(String[] args) {
+			SpringApplication.run(SpringBootConfigServerApplication.class, args);
+		}
+	}
+
+	spring.cloud.config.server.git.uri = https://github.com/Shrey19/config-server
+								  .default-label = main
+								  .username = XXXXX 
+								  .password = XXXXX
+								  
+	to check the values from config server hit URL localhost:8080/application/default --> application is the property name and default is the profile.
+	
+	Now from Client projects try to acees the values from properties file by using config client
+	
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-config</artifactId>
+	</dependency>
+	
+	Add config server URL
+	spring.cloud.config.uri=http://localhost:8888
+	
+	Add	@RefreshScope where value from config server taken and need instant modification (In Client project)	
+	Only we need to post to URL /actuator/refresh in the config-client project. After this step updated value will be dispalyed in client ptoject as well.
+	Changed values will be automatically updated in config-server project. NO action needed in server project.
+
+	IMPORTANT : If we want to have properties file per MS then just create the files with the name with application name (order-service.yml).
+
+
+Ribbon:
+
+Netflix ribbon from Spring Cloud family provides such facility to set up client side load balancing along with the service registry component. 
+Spring boot has very nice way of configuring ribbon client side load balancer with minimal effort. It provides the following features
+
+Load balancing
+Fault tolerance
+Multiple protocol (HTTP, TCP, UDP) support in an asynchronous and reactive model
+Caching and batching
+
+<dependency>
+    <groupId>com.netflix.ribbon</groupId>
+    <artifactId>ribbon</artifactId>
+    <version>2.2.2</version>
+</dependency>
+
+@EnableEurekaClient
+@SpringBootApplication
+@RibbonClient(name = "server", configuration = RibbonConfiguration.class)
+public class RibbonClientApplication {
+ 
+    public static void main(String[] args) {
+        SpringApplication.run(RibbonClientApplication.class, args);
+    }
+}
+
+server.ribbon.listOfServers=localhost:9090,localhost:9091,localhost:9092
+server.ribbon.eureka.enabled=false
+
+
+Feign:
+
+Netflix provides Feign as an abstraction over Rest-based calls, by which Microservice can communicate with each other, 
+But developers don’t have to bother about Rest internal details.
+
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-feign</artifactId>
+</dependency>
+
+
+
+@FeignClient(name="EmployeeSearch" )//Service Id of EmployeeSerach service
+public interface EmployeeServiceProxy {
+   
+   @RequestMapping("/employee/find/{id}")
+   public EmployeeInfo findById(@PathVariable(value="id") Long id);
+   
+   @RequestMapping("/employee/findall")
+   public Collection<EmployeeInfo> findAll();
+
+}
+
+
+@EnableDiscoveryClient
+@EnableFeignClients
+@SpringBootApplication
+public class EmployeeDashBoardServiceApplication {
+
+   public static void main(String[] args) {
+      SpringApplication.run(EmployeeDashBoardServiceApplication.class, args);
+   }
+   
+   @Bean
+   public RestTemplate restTemplate(RestTemplateBuilder builder) {
+      return builder.build();
+   }
+}
+
+
+
+Zuul:
+
+A common problem, when building microservices, is to provide a unique gateway to the client applications of your system. 
+The fact that your services are split into small microservices apps that shouldn’t be visible to users otherwise it may result in substantial 
+development/maintenance efforts. 
+Also there are scenarios when whole ecosystem network traffic may be passing through a single point which could impact the performance of the cluster.
+To solve this problem, Netflix (a major adopter of microservices) created and open-sourced its Zuul proxy server and later Spring under Pivotal has adapted this
+in its spring cloud stack and enabled us to use zuul easily and effectively with just few simple steps.
+Zuul is an edge service that proxies requests to multiple backing services. It provides a unified "front door" to your ecosystem, which allows 
+any browser, mobile app or other user interface to consume services from multiple hosts.
+You can integrate Zuul with other Netflix stack components like Hystrix for fault tolerance and Eureka for service discovery or use it to manage routing rules, 
+filters and load balancing across your system. Most importantly all of those components are well adapted by spring framework through spring boot/cloud approach.
+
+
+Zuul Components
+Zuul has mainly four types of filters that enable us to intercept the traffic in different timeline of the request processing for any particular transaction. We can add any number of filters for a particular url pattern.
+
+pre filters – are invoked before the request is routed.
+post filters – are invoked after the request has been routed.
+route filters – are used to route the request.
+error filters – are invoked when an error occurs while handling the request.
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-zuul -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-zuul</artifactId>
+    <version>1.0.0.RELEASE</version>
+</dependency>
+
+
+@SpringBootApplication
+@EnableZuulProxy
+public class SpringBootZuulgatwayproxyApplication {
+ 
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootZuulgatwayproxyApplication.class, args);
+    }
+ 
+    @Bean
+    public PreFilter preFilter() {
+        return new PreFilter();
+    }
+    @Bean
+    public PostFilter postFilter() {
+        return new PostFilter();
+    }
+    @Bean
+    public ErrorFilter errorFilter() {
+        return new ErrorFilter();
+    }
+    @Bean
+    public RouteFilter routeFilter() {
+        return new RouteFilter();
+    }
+}
+
+
+#Zuul routes. Here for /student path, we are routing to localhost:8090 with extra path after that.
+zuul.routes.student.url=http://localhost:8090
+
+ZUUL Gateway URL rewrite Rule :
+
+zuul:
+  routes:
+    ORDER-SERVICE:
+      path: /order/**
+      service-id: ORDER-SERVICE
+      stripPrefix: false
+
+    PAYMENT-SERVICE:
+      path: /payment/**
+      service-id: PAYMENT-SERVICE
+      stripPrefix: false
+
+
+#Ribbon is auto integrated with Zuul and for this exercise we are not using that.
+ribbon.eureka.enabled=false
+
+
+Zuul Filter
+
+package com.example.springbootzuulgatwayproxy.filters;
+ 
+import javax.servlet.http.HttpServletRequest;
+import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
+
+public class PreFilter extends ZuulFilter {
+ 
+  @Override
+  public String filterType() {
+    return "pre";
+  }
+ 
+  @Override
+  public int filterOrder() {
+    return 1;
+  }
+ 
+  @Override
+  public boolean shouldFilter() {
+    return true;
+  }
+ 
+  @Override
+  public Object run() {
+    RequestContext ctx = RequestContext.getCurrentContext();
+    HttpServletRequest request = ctx.getRequest();
+ 
+    System.out.println("Request Method : " + request.getMethod() + " Request URL : " + request.getRequestURL().toString());
+    return null;
+  }
+}
+
+Zuul VS Cloud Gateway
+Zuul is built on servlet 2.5 (works with 3.x), using blocking APIs. It doesn't support any long lived connections, like websockets.
+Gateway is built on Spring Framework 5, Project Reactor and Spring Boot 2 using non-blocking APIs. 
+Websockets are supported and it's a much better developer experience since it's tightly integrated with Spring.
+
+Cloudoud Gateway URL rewrite Rule :
+spring:
+  application:
+    name: SPRING-CLOUD-GATEWAY-SERVICE
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order/**
+        - id: payment-service
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/**
+
+Cloud Gateway dependency :
+	<dependency>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-starter-gateway</artifactId>
+	</dependency>
+
+
+
+Zipkin :
+
+Internally it has 4 modules –
+
+Collector – Once any component sends the trace data arrives to Zipkin collector daemon, it is validated, stored, and indexed for lookups by the Zipkin collector.
+Storage – This module store and index the lookup data in backend. Cassandra, ElasticSearch and MySQL are supported.
+Search – This module provides a simple JSON API for finding and retrieving traces stored in backend. The primary consumer of this API is the Web UI.
+Web UI – A very nice UI interface for viewing traces.
+
+
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-zipkin</artifactId>
+</dependency>
+
+  zipkin:
+    base-url: http://localhost:9411/
+
+Sleuth :
+
+Sleuth is a tool from Spring cloud family. It is used to generate the trace id, span id and add these information to the service calls in the headers and MDC, 
+so that It can be used by tools like Zipkin and ELK etc. to store, index and process log files. 
+
+
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-sleuth</artifactId>
+</dependency>
+
+2016-06-15 16:55:56.334 INFO [sluet-sample,55562edc42f2ae73,44462edc42f2ae73,true] 13978 ---
